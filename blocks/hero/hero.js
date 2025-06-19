@@ -3,17 +3,24 @@ export default function decorate(block) {
 
   const slides = [...block.children].map((row) => {
     const [imgCell, textCell] = row.children;
-    const imageUrl = imgCell.textContent.trim();
 
+    // Parse content lines from GDoc
+    const [heading = '', description = '', ctaLabel = '', ctaHref = '#'] =
+      textCell.textContent.trim().split('\n');
+
+    // Construct the slide
     const slide = document.createElement('div');
     slide.classList.add('hero-slide');
-    slide.style.backgroundImage = `url('${imageUrl}')`;
+    slide.style.backgroundImage = `url('${imgCell.textContent.trim()}')`;
 
+    // Render semantic layout inside
     slide.innerHTML = `
-      <div class="hero-text">
-        ${textCell.innerHTML}
-      </div>
-    `;
+  <div class="hero-text">
+    <h2>${heading}</h2>
+    <p>${description}</p>
+    <a href="${ctaHref}" class="hero-button">${ctaLabel}</a>
+  </div>
+`;
 
     return slide;
   });
