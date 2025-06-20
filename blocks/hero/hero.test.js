@@ -52,7 +52,7 @@ describe('hero block', () => {
     decorate(block);
 
     // The number of transformed slides is verified
-    const slides = block.querySelectorAll('.hero-slide');
+    const slides = block.querySelectorAll('.slick-slide');
     assert.strictEqual(slides.length, 2);
   });
 

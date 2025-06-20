@@ -1,168 +1,212 @@
-/* hero.css */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+* {
+    box-sizing: border-box;
+}
 
-.hero-container {
+/* ========== Central Container ========== */
+main .section.hero-container {
+    margin: 0 auto;
+}
+
+main .section.hero-container h2 {
+    margin-top: 1rem;
+    font-size: 2.125rem;
+    line-height: 1.25;
+    font-weight: 400;
+}
+main .section.hero-container p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/* ========== Slick Carousel Structure ========== */
+main .section.hero-container .slick-root {
     position: relative;
-    width: 100%;
+    max-width: 1440px;
+    touch-action: pan-y;
+    user-select: none;
+    padding: 0;
+}
+
+main .section.hero-container .slick-root .slick-slider {
+}
+
+main .section.hero-container .slick-root .slick-list {
+    position: relative;
+    width: 100vw;
+    max-width: 1440px;
+    transform: translate3d(0, 0, 0);
     overflow: hidden;
-    background-color: #f9f9f9;
 }
 
-.hero-wrapper {
-    position: relative;
-}
-
-.hero {
-    position: relative;
-}
-
-.hero-slide {
+main .section.hero-container .slick-root .slick-track {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 600px;
-    padding: 4rem 2rem;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    flex-direction: row;
 }
 
-.hero-text {
-    max-width: 600px;
-    z-index: 2;
+main .section.hero-container .slick-root .slick-slide {
+    position: relative;
+    min-height: 41.25rem;
+    z-index: 0;
 }
 
-.hero-text h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #0e1116;
-    margin-bottom: 1.5rem;
-}
+main .section.hero-container .slick-root .slick-slide .slick-slide-banner {
+    display: grid !important;
+    grid-auto-flow: column;
+    grid-template-columns: auto;
+    justify-items: center;
+    align-items: end;
 
-.hero-text p {
-    font-size: 1.125rem;
-    color: #4b5563;
-    margin-bottom: 2rem;
-}
-
-a.hero-button {
-    display: inline-block;
-    background-color: #1e40ff;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 9999px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.hero-button:hover {
-    background-color: #172ce0;
-}
-
-/* Remove default arrows */
-.slick-arrow {
-    display: none !important;
-}
-
-/* Custom slick dots */
-.slick-dots {
     position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex !important;
-    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100%;
+    background-size: cover;
+    background-position: right center;
+    z-index: -1;
+
+    padding: 0 1rem 6rem; /* 0 16px 96px */
 }
 
-.slick-dots li {
-    display: inline-block;
+main
+    .section.hero-container
+    .slick-root
+    .slick-slide
+    .slick-slide-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-image: linear-gradient(
+        180deg,
+        transparent,
+        rgba(0 0 0 / 0.2),
+        rgba(0 0 0 / 0.6)
+    );
+}
+
+main .section.hero-container .slick-root .hero-text {
+    position: relative;
+    line-height: 1.25;
+    max-width: 33.75rem; /* 540px */
+    text-align: center;
+    color: oklch(1 0 0);
+}
+
+main .section.hero-container .slick-root .hero-text h2 {
+    font-family: 'Source Serif 4';
+    font-size: 40px !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem;
+}
+
+main .section.hero-container .slick-root .hero-text p {
+    font-size: 14px;
+    margin: 0 0 1rem;
+}
+
+main .section.hero-container .slick-root .hero-button {
+    font-family: 'Mulish', sans-serif;
+    display: inline-flex;
+    background-color: rgb(31, 57, 255);
+    color: oklch(1 0 0);
+    border-radius: 1.25rem;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.25px;
+    margin-right: 0.75rem;
+    margin-top: 0.75rem;
+    min-width: 12rem;
+    text-decoration: none !important;
+    text-transform: uppercase;
+}
+
+main .section.hero-container .slick-root .slick-dots {
+    position: absolute;
+    bottom: 2.75rem; /* 44px */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 4rem;
+    margin: -6rem 0 0;
+    padding: 0 0 2rem;
+    list-style: none;
+    text-align: center;
+    line-height: 1.5;
+    z-index: 1;
+}
+
+main .section.hero-container .slick-root .slick-dots li {
     height: auto;
     margin: 0;
     width: auto;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    position: relative;
+    vertical-align: middle;
 }
 
-.slick-dots button {
-    outline: none;
-    background: rgb(156, 163, 175);
-    filter: brightness(100%);
-    border-radius: 10px;
-    box-shadow: none;
-    cursor: pointer;
+main .section.hero-container .slick-root .slick-dots li button {
     display: block;
-    height: 15px;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    margin: 0;
     padding: 0;
-    text-indent: -99999px;
-    transition: 0.5s;
-    width: 15px;
     background-clip: content-box !important;
-    border-color: transparent;
     border-radius: 50%;
     border-style: solid;
     border-width: 0.875rem;
-    height: 2.5rem !important;
-    margin: 0;
+    border-color: transparent;
+    background: oklch(0.71 0.02 261.41);
+    box-shadow: none;
     transition: none;
-    width: 2.5rem !important;
+    font-size: 100%;
+    touch-action: manipulation;
+    user-select: none;
+    appearance: none;
+    outline: none;
+    filter: brightness(100%);
+    cursor: pointer;
+    text-indent: -99999px;
+    color: oklch(0.21 0.03 264.68);
 }
 
-.slick-dots button:focus {
-    outline: 1px solid #0f172a;
+main .section.hero-container .slick-root .slick-dots li button:focus {
+    outline: 1px solid;
 }
 
-.slick-dots .slick-active button {
-    background-color: #0f172a;
+main .section.hero-container .slick-root .slick-dots li.slick-active button {
+    background: oklch(21.65% 0.0051 39.38);
 }
 
-/* Responsive: overlay gradient and white text at <=768px */
-@media (max-width: 768px) {
-    .hero-slide {
-        flex-direction: column;
-        justify-content: flex-end;
+/* ======= Desktop (960px+) ======= */
+@media (min-width: 960px) {
+    main
+        .section.hero-container
+        .slick-root
+        .slick-slide
+        .slick-slide-banner::before {
+        visibility: hidden;
+    }
+
+    main .section.hero-container .slick-root .slick-slide .slick-slide-banner {
+        justify-items: center;
         align-items: center;
-        text-align: center;
-        padding: 2rem 1.5rem;
-        background-size: cover;
-        background-position: right center;
-        background-repeat: no-repeat;
-        position: relative;
+        grid-template-columns: 50% 50%;
+        background-position: right top !important;
     }
-
-    .hero-slide::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.6),
-            rgba(0, 0, 0, 0.1)
-        );
-        z-index: 1;
-    }
-
-    .hero-text {
-        max-width: 90%;
-        padding-bottom: 4rem;
-        position: relative;
-        z-index: 2;
-    }
-
-    .hero-text h2,
-    .hero-text p,
-    .hero-button {
-        color: white;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-text h2 {
-        font-size: 2rem;
-    }
-
-    .hero-text p {
-        font-size: 1rem;
-    }
-
-    .slick-dots {
-        bottom: 1.5rem;
+    main .section.hero-container .slick-root .hero-text {
+        color: oklch(0.24 0.02 239.53);
+        text-align: left;
+        width: 50vw;
     }
 }
